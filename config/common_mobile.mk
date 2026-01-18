@@ -58,10 +58,17 @@ PRODUCT_PACKAGES += \
     libtextclassifier_lang_id_model
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/app/GoogleExtShared/GoogleExtShared.apk \
+    system/app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk \
+    system/etc/default-permissions/default_permissions_co.aospa.sense.xml \
+    system/etc/permissions/privapp-permissions-google.xml \
+    system/etc/permissions/privapp_allowlist_com.google.android.ext.services.xml \
     system/etc/textclassifier/actions_suggestions.universal.model \
     system/etc/textclassifier/lang_id.model \
     system/etc/textclassifier/textclassifier.en.model \
-    system/etc/textclassifier/textclassifier.universal.model
+    system/etc/textclassifier/textclassifier.universal.model \
+    system/lib64/libtensorflowlite_jni.so \
+    system/priv-app/GoogleExtServices/GoogleExtServices.apk
 
 # Themes
 PRODUCT_PACKAGES += \
