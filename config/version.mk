@@ -2,7 +2,7 @@ PRODUCT_VERSION_MAJOR = 16
 PRODUCT_VERSION_MINOR = 0
 
 # Increase Lunaris Version with each major release.
-LUNARIS_VERSION := 3.10
+LUNARIS_VERSION := 3.11
 LUNARIS_BUILD_TYPE ?= Community
 
 ifeq ($(WITH_GMS),true)
