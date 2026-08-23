@@ -26,12 +26,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable blur
 TARGET_ENABLE_BLUR ?= true
 ifeq ($(TARGET_ENABLE_BLUR),true)
-PRODUCT_SYSTEM_PROPERTIES += \
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.custom.blur.enable=true \
     persist.sysui.disableBlur=false \
     ro.surface_flinger.supports_background_blur=1
 else
-PRODUCT_SYSTEM_PROPERTIES += \
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.custom.blur.enable=false \
     persist.sysui.disableBlur=true \
     ro.surface_flinger.supports_background_blur=0
@@ -39,7 +39,7 @@ endif
 
 DEFAULT_BLUR_ALGORITHM ?= glass
 
-PRODUCT_SYSTEM_PROPERTIES += \
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.sys.renderengine.blur_algorithm=$(DEFAULT_BLUR_ALGORITHM)
 
 # Cloned app exemption
@@ -98,7 +98,7 @@ PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 TARGET_OPTIMIZED_DEXOPT ?= false
 ifeq ($(TARGET_OPTIMIZED_DEXOPT),true)
     PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed-profile
-    PRODUCT_SYSTEM_PROPERTIES += \
+    PRODUCT_SYSTEM_EXT_PROPERTIES += \
         pm.dexopt.post-boot=speed-profile \
         pm.dexopt.first-boot=verify \
         pm.dexopt.boot-after-ota=verify \
@@ -199,17 +199,17 @@ PRODUCT_PRODUCT_PROPERTIES += \
 WITH_PIXEL_LAUNCHER ?= true
 ifeq ($(WITH_GMS),true)
     ifeq ($(WITH_PIXEL_LAUNCHER),true)
-        PRODUCT_SYSTEM_PROPERTIES += \
+        PRODUCT_SYSTEM_EXT_PROPERTIES += \
             persist.sys.default_launcher=0 \
             persist.sys.quickswitch_pixel_shipped=1
     else
-        PRODUCT_SYSTEM_PROPERTIES += \
+        PRODUCT_SYSTEM_EXT_PROPERTIES += \
             persist.sys.default_launcher=0 \
             persist.sys.quickswitch_pixel_shipped=0
     endif
 else
-    PRODUCT_SYSTEM_PROPERTIES += \
-        persist.sys.default_launcher=0
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    persist.sys.default_launcher=0
 endif
 
 ifeq ($(SURFACE_FLINGER_BOOST),true)
