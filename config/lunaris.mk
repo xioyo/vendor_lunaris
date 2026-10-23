@@ -231,3 +231,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 endif
 endif
 
+
+# Standalone encrypted application backup and restore.
+PRODUCT_PACKAGES += LunarBackup
