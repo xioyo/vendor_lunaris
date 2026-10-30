@@ -135,9 +135,16 @@ PRODUCT_PACKAGES += \
     LMOFreeform \
     LMOFreeformSidebar \
     LunarisLockStyles \
+    LunarisMonet \
     OmniJaws \
     OmniStyle \
     OptimizationEngine
+
+# Skip AppDataBackup on Pixel devices
+ifeq ($(filter Google google,$(PRODUCT_MANUFACTURER)),)
+PRODUCT_PACKAGES += \
+    AppDataBackup
+endif
 
 $(call inherit-product-if-exists, axion_sdk/ax_tflite/common.mk)
 
