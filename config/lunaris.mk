@@ -37,6 +37,12 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=0
 endif
 
+TARGET_LOW_END_BLUR ?= false
+ifeq ($(TARGET_LOW_END_BLUR),true)
+    PRODUCT_VENDOR_PROPERTIES += \
+        debug.renderengine.blur_algorithm=kawase_darkmoon
+endif
+
 # Cloned app exemption
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/sysconfig/preinstalled-packages-platform-crdroid-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled-packages-platform-crdroid-product.xml
